@@ -20,7 +20,24 @@ public class DCP1482 {
         assert v1(121);
         assert v1(272);
         assert v1(678) == false;
-        assert v1(-121) == false;
+        assert v1(-121) == true;
+
+        assert v2(888);
+        assert v2(121);
+        assert v2(272);
+        assert v2(678) == false;
+        assert v2(-121) == false;
+    }
+
+    private static boolean v2(final int num) {
+        int n = num;
+        int maybePalindrome = 0;
+        while (n > 0) {
+            int lastDigit = n % 10;
+            maybePalindrome = maybePalindrome * 10 + lastDigit;
+            n = n / 10;
+        }
+        return maybePalindrome == num;
     }
 
     private static boolean v1(final int num) {
@@ -45,9 +62,9 @@ public class DCP1482 {
             isPalindrome = digits[begin] == digits[lastIndex--];
         }
 
-        System.out.println(num);
-        System.out.println(Arrays.toString(digits));
-        System.out.println(isPalindrome);
+        //System.out.println(num);
+        //System.out.println(Arrays.toString(digits));
+        //System.out.println(isPalindrome);
         return isPalindrome;
     }
 
