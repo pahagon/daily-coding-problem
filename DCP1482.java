@@ -36,7 +36,6 @@ public class DCP1482 {
         int endOfBegin = size / 2;
         if (size > 3) {
             boolean isOdd = (size % 3) == 0;
-            endOfBegin = size / 2;
             if(isOdd)
                 endOfBegin = endOfBegin - 1;
         }
